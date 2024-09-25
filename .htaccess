@@ -1,0 +1,21 @@
+Options -Indexes
+
+# ErrorDocument 404 https://disabilitas.kedirikab.go.id/kesalahan
+# ErrorDocument 403 https://disabilitas.kedirikab.go.id/kesalahan
+# ErrorDocument 500 https://disabilitas.kedirikab.go.id/kesalahan
+
+ErrorDocument 404 http://localhost/disabilitas/kesalahan
+ErrorDocument 403 http://localhost/disabilitas/kesalahan
+ErrorDocument 500 http://localhost/disabilitas/kesalahan
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+#RewriteRule ^([a-z]+)\/?$ $1.php [NC]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+#RewriteRule ^([a-z]+)\/?$ $1.html [NC]

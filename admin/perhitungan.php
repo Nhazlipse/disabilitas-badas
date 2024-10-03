@@ -153,11 +153,11 @@ include '../kontrol/sesi_admin.php';
                   <center><b>DATA WARGA</b></center>
                   <div class="form-group">
                     <label for="nama">Nama WARGA ?</label>
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Mahasiswa" required>
+                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Warga" required>
                   </div>
                   <div class="form-group">
                     <label for="nim">NIK WARGA ?</label>
-                    <input type="text" name="nim" class="form-control" id="nim" placeholder="NIM Mahasiswa" required>
+                    <input type="text" name="nim" class="form-control" id="nim" placeholder="NIK Warga" required>
                   </div>
                   <center><b>DATA NILAI KRITERIA</b></center>
                   <?php

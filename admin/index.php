@@ -139,7 +139,7 @@ include '../kontrol/sesi_admin.php';
         </div>
         <div class="box-body">
         <div class="box-body" style="text-align: center; padding: 20px;">
-            <h2>Selamat Datang di Sistem Pendukung Keputusan Bantuan Disabilitas</h2>
+            <h2>Sistem Pendukung Keputusan Bantuan Disabilitas</h2>
             <p style="font-size: 18px;">Menggunakan Metode <strong>Naïve Bayes</strong></p>
         </div>
 

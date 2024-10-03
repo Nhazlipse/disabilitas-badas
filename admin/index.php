@@ -133,17 +133,20 @@ include '../kontrol/sesi_admin.php';
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Selamat Datang</h3>
+          <h3 class="box-title">Dashboard</h3>
 
           
         </div>
         <div class="box-body">
-          Selamat Datang DI Sistem Pendukung Keputusan Pemilihan Jurusan
+        <div class="box-body" style="text-align: center; padding: 20px;">
+            <h2>Selamat Datang di Sistem Pendukung Keputusan Bantuan Disabilitas</h2>
+            <p style="font-size: 18px;">Menggunakan Metode <strong>Naïve Bayes</strong></p>
         </div>
+
         <!-- /.box-body -->
-        <div class="box-footer">
+        <!-- <div class="box-footer">
           2024
-        </div>
+        </div> -->
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

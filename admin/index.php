@@ -9,6 +9,69 @@ include '../kontrol/sesi_admin.php';
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+   .row {
+            display: flex;
+            justify-content: space-around; /* Adjusts spacing between cards */
+            align-items: flex-start; /* Align cards at the top */
+        }
+        .card {
+            width: 15%;
+            position: relative;
+            left: 0%; /* Pindahkan kotak ke kiri */
+            border-left: 5px solid #4e73df; /* Primary border color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Hover effect */
+        }
+        .card-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text-primary {
+            color: #4e73df; /* Text color */
+        }
+        .text-center {
+            text-align: center;
+        }
+        .font-weight-bold {
+            font-weight: bold;
+        }
+        .text-gray-900 {
+            color: #3a3b45; /* Gray text color */
+        }
+        .icon {
+            font-size: 2rem;
+            color: #b0b3c5; /* Icon color */
+        }
+        .copyright {
+            text-align: center; /* Menyelaraskan teks ke tengah */
+            padding: 20px; /* Memberi jarak atas dan bawah */
+            background-color: #f8f9fa; /* Warna latar belakang */
+            flex-shrink: 0; /* Mencegah elemen copyright menyusut */
+            margin-top: auto; /* Menjaga copyright di bagian bawah */
+        }
+        .overview-container {
+            display: flex; /* Menggunakan flexbox untuk penataan */
+            justify-content: center; /* Menempatkan konten di tengah secara horizontal */
+            align-items: center; /* Menempatkan konten di tengah secara vertikal */
+            height: 10vh; /* Mengatur tinggi kontainer agar setinggi viewport */
+            text-align: center; /* Menyelaraskan teks di tengah */
+        }
+
+        .overview-title {
+            font-size: 24px; /* Mengatur ukuran font */
+            font-weight: bold; /* Menegaskan font */
+        }
+    </style>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?= $def_title; ?></title>
@@ -144,9 +207,79 @@ include '../kontrol/sesi_admin.php';
         </div>
 
         <!-- /.box-body -->
-        <!-- <div class="box-footer">
-          2024
-        </div> -->
+        <div class="box-footer">
+        <div class="overview-container">
+        <div class="overview-title">OVERVIEW</div>
+    </div>
+        <?php
+                         // Query untuk menghitung total data uji
+                          $query = "SELECT COUNT(*) as total_data FROM uji_data";
+                          $result = $konek->query($query);
+
+                          // Cek apakah query berhasil
+                          if ($result) {
+                              $row = $result->fetch_assoc();
+                              $total_data = $row['total_data'];
+                          } else {
+                              echo "Error: " . $konek->error;
+                          }
+                        ?>
+
+<div class="row">
+        <!-- Total Data Uji Card -->
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-section">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 text-center" style="font-size:16px;">
+                        Total Data Uji
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-900 text-center">
+                        <?php echo $total_data; ?>
+                    </div>
+                </div>
+                <div class="icon-section">
+                    <i class="fa fa-id-card icon"></i>
+                </div>
+        </div>
+    </div>
+
+    <?php
+                        $query = "SELECT COUNT(*) as total_data2 FROM uji_data_test";
+                        $result = $konek->query($query);
+
+                        // Cek apakah query berhasil
+                        if ($result) {
+                          $row = $result->fetch_assoc();
+                          $total_data2 = $row['total_data2'];
+                      } else {
+                          echo "Error: " . $konek->error;
+                      }
+                    ?>
+
+<!-- Data Test Card -->
+<div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="text-section">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1 text-center" style="font-size:16px;">
+                        Data Test
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-900 text-center">
+                        <?php echo $total_data2; ?>
+                    </div>
+                </div>
+                <div class="icon-section">
+                    <i class="fa fa-folder icon"></i>
+                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+ <!-- Copyright Section -->
+ <div class="copyright">
+        Ringkasan Data Penerima Bantuan Sosial
+    </div>
+        </div>
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->

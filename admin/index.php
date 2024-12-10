@@ -56,7 +56,7 @@ include '../kontrol/sesi_admin.php';
             padding: 20px; /* Memberi jarak atas dan bawah */
             background-color: #f8f9fa; /* Warna latar belakang */
             flex-shrink: 0; /* Mencegah elemen copyright menyusut */
-            margin-top: auto; /* Menjaga copyright di bagian bawah */
+            margin-top: 150px; /* Menjaga copyright di bagian bawah */
         }
         .overview-container {
             display: flex; /* Menggunakan flexbox untuk penataan */
@@ -70,6 +70,24 @@ include '../kontrol/sesi_admin.php';
             font-size: 24px; /* Mengatur ukuran font */
             font-weight: bold; /* Menegaskan font */
         }
+
+        .content-wrapper {
+    padding-bottom: 60px; /* Memberikan ruang sebesar tinggi copyright */
+}
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    z-index: 100;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Tetapkan tinggi elemen copyright */
+}
+
     </style>
 
   <meta charset="utf-8">

@@ -293,7 +293,7 @@ include '../kontrol/sesi_admin.php';
                 <b>$dkrit[nama_kriteria]</b> : $isi_tabel[$nama_isi]<br>
                 ";
               }
-              echo "<center><h3 style='color:green;'><b>Data Perhitungan dan Rekomeendasi</b></h3></center>";
+              echo "<center><h3 style='color:green;'><b>Data Perhitungan dan Rekomendasi</b></h3></center>";
 
               //hapus jika pernah melakukan perhitungan untuk NIM Diatas
               $del_hasil = mysqli_query($konek,"DELETE FROM hasil WHERE nim_hasil='$dt_mhs[nim_data]'");
